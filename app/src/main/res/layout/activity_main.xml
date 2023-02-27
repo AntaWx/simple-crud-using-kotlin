@@ -4,12 +4,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/test"
+    android:padding="20dp">
+
+    <EditText
+        android:id="@+id/cari_judul"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="Cari Judul"
+        android:inputType="text"
+        android:minLines="1"
+        android:textColorHint="@color/black"
+        android:background="@drawable/search_box_border"
+        android:textSize="20sp"
+        android:paddingLeft="20dp"/>
+
+    <ImageView
+        android:id="@+id/icon_cari_judul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/search_icon"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/cari_judul"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:theme="@style/RecyclerViewStyle"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
@@ -17,8 +46,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_margin="15dp"
+        android:layout_margin="10dp"
         android:elevation="10dp"
+        android:backgroundTint="@color/yellow_504"
         android:src="@drawable/add_icon"/>
 
 </RelativeLayout>

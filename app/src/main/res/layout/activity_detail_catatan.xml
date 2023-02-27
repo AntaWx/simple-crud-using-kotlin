@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TambahCatatanActivity"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/judul_catatan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Judul Catatan"/>
+
+    <EditText
+        android:id="@+id/detail_judul_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Judul Catatan"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_below="@id/judul_catatan"
+        android:focusableInTouchMode="true"/>
+
+    <TextView
+        android:id="@+id/isi_catatan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/detail_judul_user"
+        android:text="Isi Catatan"/>
+
+    <EditText
+        android:id="@+id/detail_catatan_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/isi_catatan"
+        android:minLines="1"
+        android:maxLines="10"
+        android:hint="Catatan"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"/>
+
+    <Button
+        android:id="@+id/button_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/item_shape"
+        android:text="Back"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/detail_catatan_user"/>
+
+</RelativeLayout>

@@ -2,6 +2,7 @@ package com.surya_yasa_antariksa.latihancrud
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -27,6 +28,14 @@ class TambahCatatanActivity : AppCompatActivity() {
         catatan = findViewById(R.id.catatan_user)
         saveButton = findViewById(R.id.save_button)
         database = UserDatabase.getInstance(applicationContext)
+        var actionBar = supportActionBar
+
+        when{
+            actionBar != null -> {
+                actionBar.setDisplayHomeAsUpEnabled(true)
+                actionBar.title = "Tambah Catatan"
+            }
+        }
 
         saveButton.setOnClickListener {
             if(judul.text.isNotEmpty() && catatan.text.isNotEmpty()){
@@ -43,5 +52,15 @@ class TambahCatatanActivity : AppCompatActivity() {
                     Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            android.R.id.home ->{
+                finish()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

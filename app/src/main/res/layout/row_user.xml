@@ -3,19 +3,26 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="20dp">
+    android:padding="15dp"
+    android:background="@drawable/item_shape"
+    android:backgroundTint="@color/yellow_0e"
+    android:elevation="5dp"
+    android:layout_marginTop="10dp">
 
     <TextView
         android:id="@+id/judul"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppinsbold"
         android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/catatan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textStyle="bold" />
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/poppinsmedium"
+        android:textStyle="bold"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -27,7 +34,7 @@
             android:id="@+id/edit_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/edit_icon" />
+            android:background="@drawable/edit_icon"/>
 
         <ImageButton
             android:id="@+id/delete_button"

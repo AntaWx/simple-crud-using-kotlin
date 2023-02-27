@@ -2,6 +2,7 @@ package com.surya_yasa_antariksa.latihancrud
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import com.surya_yasa_antariksa.latihancrud.database.UserDatabase
@@ -22,6 +23,14 @@ class UpdateDataActivity : AppCompatActivity() {
         editJudul = findViewById(R.id.update_judul_user)
         editIsi = findViewById(R.id.update_catatan_user)
         buttonUpdate = findViewById(R.id.update_button)
+        var actionBar = supportActionBar
+
+        when{
+            actionBar != null ->{
+                actionBar.setDisplayHomeAsUpEnabled(true)
+                actionBar.title = "Update Catatan"
+            }
+        }
 
         val id = intent.getIntExtra("id", -1)
         val judul = intent.getStringExtra("judul")
@@ -41,5 +50,15 @@ class UpdateDataActivity : AppCompatActivity() {
 
             finish()
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            android.R.id.home -> {
+                finish()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

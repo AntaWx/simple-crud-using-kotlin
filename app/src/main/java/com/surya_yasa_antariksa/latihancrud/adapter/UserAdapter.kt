@@ -29,12 +29,17 @@ class UserAdapter(var list: List<User>, val listener: OnItemClickListener): Recy
             btnDelete.setOnClickListener {
                 listener.onDeleteClick(adapterPosition)
             }
+
+            judul.setOnClickListener {
+                listener.onJudulClick(adapterPosition)
+            }
         }
     }
 
     interface OnItemClickListener {
         fun onUpdateClick(position: Int)
         fun onDeleteClick(position: Int)
+        fun onJudulClick(position: Int)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
